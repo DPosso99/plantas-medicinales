@@ -105,9 +105,34 @@ h1, h2, h3, h4, .font-heading {
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1rem;
   text-decoration: none;
   color: inherit;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.brand-logo-emblema {
+  width: 44px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.22));
+  display: block;
+}
+
+.brand-logo-sol {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.18));
+  display: block;
 }
 
 .brand-icon {
@@ -120,19 +145,32 @@ h1, h2, h3, h4, .font-heading {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(25, 94, 56, 0.25);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .brand-text h1 {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--primary-deep);
   letter-spacing: -0.02em;
 }
 
 .brand-text p {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
+  margin: 0.15rem 0 0;
   color: var(--accent-gold);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
 }
 
 .nav-actions {
@@ -964,6 +1002,67 @@ h1, h2, h3, h4, .font-heading {
 @keyframes toastIn {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVIDAD DE BARRA DE NAVEGACIÓN Y CABECERA */
+@media (max-width: 960px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.65rem 1rem;
+  }
+  
+  .navbar-container {
+    gap: 0.5rem;
+  }
+
+  .brand-wrapper {
+    gap: 0.65rem;
+  }
+
+  .brand-logos {
+    gap: 0.45rem;
+  }
+
+  .brand-logo-emblema {
+    width: 36px;
+    height: 32px;
+  }
+
+  .brand-logo-sol {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-text h1 {
+    font-size: 0.98rem;
+  }
+
+  .brand-text p {
+    font-size: 0.68rem;
+  }
+
+  .nav-actions {
+    gap: 0.4rem;
+  }
+
+  .btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-text p {
+    display: none;
+  }
+  .brand-text h1 {
+    font-size: 0.92rem;
+  }
 }
 
 /* MODO DE IMPRESIÓN (Ficha Etnobotánica de Campo) */
