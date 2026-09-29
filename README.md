@@ -2,9 +2,8 @@
 
 > **Pueblo Indígena de Los Pastos • Municipio de Guachucal, Nariño, Colombia**  
 > **Trabajo de Grado y Retribución Comunitaria • Fondo Álvaro Ulcué Chocué (ICETEX / MinInterior)**  
-> **Autor:** David Julián Taimal Poso (C.C. 1144091406)  
+> **Autor:** David Julián Taimal Poso  
 > **Programa:** Ingeniería de Sistemas e Informática — Universidad Nacional de Colombia Sede Medellín  
-> **Periodo:** 2026-2 (Entrega Final y Condonación)
 
 ---
 
