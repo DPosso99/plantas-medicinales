@@ -67,6 +67,23 @@ El proyecto está diseñado bajo estándares web puros (HTML5 semántico, CSS3 m
 
 ---
 
+---
+
+## 🏛️ Símbolos e Identidad Territorial del Resguardo de Muellamués
+
+La plataforma honra la identidad ancestral e institucional del territorio a través de sus insignias oficiales:
+
+1. **Bandera del Resguardo Indígena de Muellamués:**
+   - **Blanco (Superior):** Espiritualidad, pureza, nieblas tutelares del páramo andino y paz comunitaria.
+   - **Verde (Central):** La Madre Tierra (*Pachamama*), los campos fértiles, las huertas medicinales tradicionales (*Jardín Simancas*) y la soberanía alimentaria.
+   - **Negro (Inferior):** La tierra fértil de la chagra nariñense, la firmeza, resistencia y memoria histórica de los mayores.
+2. **Emblema Central del Cabildo:**
+   - Custodia el **Bastón de Mando** (símbolo sagrado de autoridad comunitaria, justicia propia y autonomía), erigido frente al Sol radiante, los cerros sagrados y las fuentes de agua de páramo.
+3. **El Sol de los Pastos:**
+   - Estrella milenaria de ocho puntas que sintetiza los solsticios, los equinoccios, las cuatro direcciones y los ciclos agrícolas del altiplano.
+
+---
+
 ## 🏛️ Créditos y Agradecimientos
 
 - **Cabildo Indígena de Muellamués** — Gran Territorio de los Pastos.
@@ -74,3 +91,4 @@ El proyecto está diseñado bajo estándares web puros (HTML5 semántico, CSS3 m
 - **Comunidad de Sabedores, Mayores y Mayoras** guardianes de la palabra y la semilla.
 - **Fondo Álvaro Ulcué Chocué (ICETEX - Ministerio del Interior)**.
 - **Universidad Nacional de Colombia Sede Medellín** — Facultad de Minas.
+
