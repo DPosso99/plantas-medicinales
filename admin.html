@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración | Cabildo Indígena de Muellamués</title>
+  <meta name="description" content="Panel de gestión de plantas medicinales para el Cabildo y Sabedores del Resguardo de Muellamués.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Estilos específicos del Panel de Administración */
+    .admin-wrapper {
+      max-width: 1320px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .admin-header-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .admin-title-group h2 {
+      font-size: 1.75rem;
+      color: var(--primary-deep);
+      margin-bottom: 0.25rem;
+    }
+    .admin-title-group p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .admin-actions-bar {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .plants-table-wrapper {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .admin-table th {
+      background: var(--bg-subtle);
+      color: var(--primary-deep);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .admin-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: middle;
+    }
+
+    .admin-table tr:hover {
+      background: #faf7f0;
+    }
+
+    .table-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      background: #e5ded2;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Formulario en Modal */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    @media (max-width: 680px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .form-control {
+      padding: 0.7rem 0.95rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: var(--bg-page);
+      color: var(--text-main);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #fff;
+    }
+
+    textarea.form-control {
+      min-height: 85px;
+      resize: vertical;
+    }
+
+    /* Pantalla de Bloqueo PIN */
+    .lock-screen {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-page);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .lock-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.75rem 2.25rem;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PANTALLA DE ACCESO POR PIN -->
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-card">
+      <div class="brand-icon" style="margin: 0 auto 1.5rem; width: 56px; height: 56px;">
+        <svg style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" fill="#ffd885" stroke="#fff"/>
+        </svg>
+      </div>
+
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Cabildo Indígena de Muellamués</h2>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.75rem;">
+        Acceso restringido para la administración y custodia del saber etnobotánico comunitario.
+      </p>
+
+      <form id="pinForm" onsubmit="validarPin(event)">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <input 
+            type="password" 
+            id="pinInput" 
+            class="form-control" 
+            placeholder="Introduce la clave de acceso" 
+            style="text-align: center; font-size: 1.1rem; letter-spacing: 0.2em;"
+            required
+            autofocus
+          />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">
+          Ingresar al Panel
+        </button>
+      </form>
+
+      <p style="font-size: 0.78rem; color: var(--text-light); margin-top: 1.25rem;">
+        Clave predeterminada: <strong>muellamues2026</strong>
+      </p>
+      <div style="margin-top: 1rem;">
+        <a href="index.html" style="color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 600;">
+          ← Volver al Catálogo Público
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra Superior del Administrador -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="brand-wrapper">
+        <div class="brand-icon">
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" fill="#ffd885" stroke="#fff"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Panel de Custodia Etnobotánica</h1>
+          <p>Cabildo Indígena de Muellamués</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary">
+          <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          <span>Ver Catálogo Público</span>
+        </a>
+
+        <button class="btn btn-secondary" onclick="cerrarSesionAdmin()" title="Cerrar sesión">
+          Salir
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-wrapper" id="adminMainContent" style="display: none;">
+    <!-- Caja de Control Superior -->
+    <div class="admin-header-box">
+      <div class="admin-title-group">
+        <h2>Gestión de Plantas Medicinales</h2>
+        <p id="adminStatusText">Administra las fichas botánicas, respalda la base de datos o restaura copias de seguridad.</p>
+      </div>
+
+      <div class="admin-actions-bar">
+        <button class="btn btn-primary" onclick="abrirModalNuevaPlanta()">
+          <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          Nueva Planta
+        </button>
+
+        <button class="btn btn-secondary" onclick="exportarBackupJSON()">
+          <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Exportar JSON
+        </button>
+
+        <label class="btn btn-secondary" style="cursor: pointer;">
+          <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          Importar JSON
+          <input type="file" id="jsonFileInput" accept=".json" style="display: none;" onchange="importarBackupJSON(event)">
+        </label>
+
+        <button class="btn btn-secondary" onclick="restaurarBaseDatosOriginal()" style="color: var(--accent-warm);">
+          Restaurar Base
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabla de Plantas -->
+    <div class="plants-table-wrapper">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th style="width: 60px;">Foto</th>
+            <th>Nombre Común</th>
+            <th>Nombre Científico</th>
+            <th>Calidad</th>
+            <th>Categoría</th>
+            <th>Ecosistema</th>
+            <th style="text-align: right; width: 140px;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="adminPlantsTableBody">
+          <!-- Inyectado por JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- MODAL PARA AGREGAR O EDITAR PLANTA -->
+  <div class="modal-overlay" id="adminFormModal">
+    <div class="modal-content" style="max-width: 760px; padding: 2rem;">
+      <button class="modal-close-btn" onclick="cerrarFormModal()">✕</button>
+      
+      <h2 style="font-size: 1.6rem; color: var(--primary-deep); margin-bottom: 0.25rem;" id="formModalTitle">
+        Registrar Nueva Planta Medicinal
+      </h2>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+        Diligencie la información avalada por los sabedores y médicos tradicionales del Resguardo de Muellamués.
+      </p>
+
+      <form id="plantForm" onsubmit="guardarPlantaFormulario(event)">
+        <input type="hidden" id="formPlantId">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Nombre Común *</label>
+            <input type="text" id="formNombreComun" class="form-control" required placeholder="Ej: Chilca">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nombre Ancestral / Local</label>
+            <input type="text" id="formNombreAncestral" class="form-control" placeholder="Ej: Chilca negra de páramo">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nombre Científico *</label>
+            <input type="text" id="formNombreCientifico" class="form-control" required placeholder="Ej: Baccharis latifolia">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Familia Botánica *</label>
+            <input type="text" id="formFamilia" class="form-control" required placeholder="Ej: Asteraceae">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Calidad Ancestral (Pastos) *</label>
+            <select id="formCalidad" class="form-control" required>
+              <option value="Cálida (Caliente)">Cálida (Caliente)</option>
+              <option value="Fresca (Fría)">Fresca (Fría)</option>
+              <option value="Templada">Templada</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Categoría Terapéutica *</label>
+            <select id="formCategoria" class="form-control" required>
+              <option value="Espiritual y Tradicional">Espiritual y Tradicional (Mal Aire, Limpias)</option>
+              <option value="Respiratorio">Respiratorio &amp; Gripas</option>
+              <option value="Digestivo">Digestivo &amp; Estomacal</option>
+              <option value="Dolores e Inflamación">Dolores e Inflamación</option>
+              <option value="Piel y Cicatrización">Piel y Cicatrización</option>
+              <option value="Nervios y Vitalidad">Nervios y Vitalidad</option>
+              <option value="Depurativo y Renal">Depurativo y Renal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Ecosistema / Ubicación en Muellamués *</label>
+            <input type="text" id="formEcosistema" class="form-control" required placeholder="Ej: Rastrojos y zanjones (3.000 msnm)">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Partes Utilizadas *</label>
+            <input type="text" id="formPartes" class="form-control" required placeholder="Ej: Hojas frescas y brotes tiernos">
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label">Usos Medicinales (Un uso por línea) *</label>
+            <textarea id="formUsos" class="form-control" rows="3" required placeholder="Alivio de dolores articulares&#10;Tratamiento tradicional de mal aire&#10;Desinflamación de golpes"></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label">Método de Preparación Tradicional *</label>
+            <textarea id="formPreparacion" class="form-control" rows="2" required placeholder="Cataplasma tibio con hojas soasadas al fuego..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Posología Recomendada *</label>
+            <input type="text" id="formPosologia" class="form-control" required placeholder="Ej: 1 taza tibia en la noche">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Precauciones / Contraindicaciones</label>
+            <input type="text" id="formPrecauciones" class="form-control" placeholder="Ej: No consumir en el embarazo">
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label">Saber Ancestral (Testimonio de los Mayores) *</label>
+            <textarea id="formSaberAncestral" class="form-control" rows="2" required placeholder="«La chilca es el abrigo del cuerpo...» — Sabedores de Muellamués"></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label">Ruta o URL de Imagen</label>
+            <input type="text" id="formImagenUrl" class="form-control" placeholder="assets/images/planta.jpg o enlace web HTTPS">
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+          <button type="button" class="btn btn-secondary" onclick="cerrarFormModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Planta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/plantsData.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

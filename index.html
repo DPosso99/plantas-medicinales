@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantas Medicinales de Muellamués | Software Interactivo Etnobotánico</title>
+  <meta name="description" content="Base de datos y software interactivo de plantas medicinales y saberes terapéuticos del Resguardo Indígena de Muellamués, Guachucal, Nariño - Pueblo Pastos.">
+  
+  <!-- Fuentes Google: Outfit, Plus Jakarta Sans y Lora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500;1,600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos del Sistema Etnobotánico -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23195e38'><path d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z'/></svg>">
+</head>
+<body>
+
+  <!-- Barra de Navegación Principal -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="brand-wrapper">
+        <div class="brand-icon">
+          <!-- Icono Sol de los Pastos (Estrella de 8 puntas estilizada) -->
+          <svg style="width: 26px; height: 26px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" fill="#ffd885" stroke="#fff"/>
+            <circle cx="12" cy="12" r="3" fill="#133a27" stroke="#ffd885"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Saber Medicinal Muellamués</h1>
+          <p>Pueblo de los Pastos • Guachucal, Nariño</p>
+        </div>
+      </a>
+
+      <nav class="nav-actions">
+        <button class="btn btn-secondary" id="openCosmovisionBtn">
+          <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          <span class="desktop-only">Cosmovisión</span>
+        </button>
+
+        <a href="admin.html" class="btn btn-secondary" title="Panel de Gestión del Cabildo">
+          <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span class="desktop-only">Cabildo / Admin</span>
+        </a>
+
+        <button class="btn btn-primary" onclick="window.print()" title="Imprimir catálogo o guardar en PDF">
+          <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+          </svg>
+          <span>Imprimir</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section Cultural -->
+  <section class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-badge">
+        <svg style="width: 14px; height: 14px;" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/>
+        </svg>
+        Patrimonio Biocultural Indígena • Fondo Álvaro Ulcué Chocué
+      </div>
+      <h2>Herbario Digital &amp; Saber Ancestral <span>Resguardo de Muellamués</span></h2>
+      <p class="hero-subtitle">
+        Catálogo interactivo de las plantas medicinales y terapéuticas del pueblo Pastos. 
+        Un puente digital para revitalizar la memoria viva de nuestras mayoras, parteras, yerbateros y médicos tradicionales en las faldas de los volcanes andinos.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num" id="statPlants">24</div>
+          <div class="stat-label">Plantas Documentadas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Calidades Ancestrales</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3.150m</div>
+          <div class="stat-label">Altitud Promedio Páramo</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Saber Comunitario de Libre Acceso</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buscador y Filtros Interactivos -->
+  <section class="search-filter-section">
+    <div class="search-card">
+      <div class="search-input-wrapper">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="search-input" 
+          placeholder="Buscar por nombre, dolencia (ej. 'reumatismo', 'malviento', 'tos', 'gastritis') o ecosistema..."
+          autocomplete="off"
+        />
+        <button class="search-clear-btn" id="searchClearBtn" title="Limpiar búsqueda">✕</button>
+      </div>
+
+      <div class="filter-groups">
+        <!-- Filtro por Calidad Pastos -->
+        <div class="filter-row">
+          <span class="filter-label">Calidad:</span>
+          <div class="filter-chips">
+            <button class="chip chip-todas active" data-filter-calidad="todas">Todas</button>
+            <button class="chip chip-calida" data-filter-calidad="cálida">🔥 Cálida (Caliente)</button>
+            <button class="chip chip-fresca" data-filter-calidad="fresca">❄️ Fresca (Fría)</button>
+            <button class="chip chip-templada" data-filter-calidad="templada">⚖️ Templada</button>
+          </div>
+        </div>
+
+        <!-- Filtro por Categoría Terapéutica -->
+        <div class="filter-row">
+          <span class="filter-label">Uso:</span>
+          <div class="filter-chips">
+            <button class="chip active" data-filter-categoria="todas">Todas</button>
+            <button class="chip" data-filter-categoria="Espiritual y Tradicional">Espiritual &amp; Tradicional (Mal Aire, Baños)</button>
+            <button class="chip" data-filter-categoria="Respiratorio">Respiratorio &amp; Gripas</button>
+            <button class="chip" data-filter-categoria="Digestivo">Digestivo &amp; Estomacal</button>
+            <button class="chip" data-filter-categoria="Dolores e Inflamación">Dolores &amp; Articulaciones</button>
+            <button class="chip" data-filter-categoria="Piel y Cicatrización">Piel &amp; Cicatrización</button>
+            <button class="chip" data-filter-categoria="Nervios y Vitalidad">Nervios &amp; Sueño</button>
+            <button class="chip" data-filter-categoria="Depurativo y Renal">Depurativo &amp; Riñones</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Encabezado de Resultados -->
+  <div class="results-header">
+    <div class="results-count" id="resultsCount">
+      Cargando catálogo botánico...
+    </div>
+    <div class="results-actions">
+      <button class="btn btn-secondary" onclick="restablecerFiltros()" style="font-size: 0.8rem; padding: 0.35rem 0.85rem;">
+        Restablecer Filtros
+      </button>
+    </div>
+  </div>
+
+  <!-- Contenedor Grilla de Plantas -->
+  <main class="plants-container">
+    <div class="plants-grid" id="plantsGrid">
+      <!-- Se inyectan dinámicamente las 24 tarjetas vía app.js -->
+    </div>
+  </main>
+
+  <!-- Sección de Territorio y Cosmovisión de los Pastos -->
+  <section class="territorio-section" id="territorioInfo">
+    <div class="territorio-container">
+      <div class="territorio-grid">
+        <div class="territorio-text">
+          <div class="hero-badge" style="background: rgba(255,255,255,0.15); color: #ffd885; border: 1px solid rgba(255,255,255,0.25);">
+            Sabiduría Milenaria de los Pastos
+          </div>
+          <h2>La Medicina del Frío y el Calor en <span>Muellamués</span></h2>
+          <p>
+            En la cosmovisión del pueblo indígena de los Pastos, la salud no es un estado individual aislado sino el equilibrio armónico entre el cuerpo humano, el cosmos, el territorio y los espíritus de la naturaleza. Las enfermedades se conciben a partir de desbalances térmicos y energéticos:
+          </p>
+          <p>
+            Cuando el cuerpo sufre por "enfriamiento", "mal aire" o "malviento" de las quebradas y los páramos, se restablece el orden mediante <strong>plantas cálidas</strong> (como la Chilca, la Ruda, la Altamisa o el Romero). Cuando el organismo padece fiebres, inflamaciones o calor estomacal, se templa con <strong>plantas frescas</strong> (como el Llantén, la Sábila o la Manzanilla).
+          </p>
+
+          <div class="territorio-features">
+            <div class="feature-box">
+              <h4>Jardín Botánico Simancas</h4>
+              <p>Espacio territorial recuperado en Muellamués dedicado a la siembra, recolección y resguardo pedagógico de la flora medicinal tradicional.</p>
+            </div>
+            <div class="feature-box">
+              <h4>IPS Indígena Muellamués</h4>
+              <p>Modelo de salud intercultural donde conviven la medicina científica y el saber ancestral de médicos tradicionales, parteras y sobanderos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-lg); padding: 2rem; backdrop-filter: blur(8px);">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <!-- Icono Sol de los Pastos en grande -->
+            <svg style="width: 72px; height: 72px; margin: 0 auto;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" fill="#ffd885" stroke="#fff"/>
+              <circle cx="12" cy="12" r="3.5" fill="#133a27" stroke="#ffd885" stroke-width="2"/>
+            </svg>
+            <h3 style="color: #ffd885; margin-top: 1rem; font-size: 1.35rem;">El Sol de los Pastos</h3>
+            <p style="color: #c7ded0; font-size: 0.85rem;">Estrella de ocho puntas • Símbolo de los cuatro puntos cardinales y los cuatro solsticios y equinoccios de la siembra andina</p>
+          </div>
+
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem;">
+            <p style="font-size: 0.9rem; color: #e5f1ea; line-height: 1.6; margin-bottom: 0.85rem;">
+              <strong>Ubicación Territorial:</strong> Resguardo Indígena de Muellamués, Municipio de Guachucal, Departamento de Nariño, Colombia.
+            </p>
+            <p style="font-size: 0.9rem; color: #e5f1ea; line-height: 1.6; margin-bottom: 0.85rem;">
+              <strong>Ecosistemas:</strong> Altiplano nariñense, páramos de Guachucal, faldas tutelares de los volcanes Cumbal y Azufral (3.000 a 3.800 msnm).
+            </p>
+            <p style="font-size: 0.85rem; color: #ffd885; font-style: italic;">
+              "El saber de las plantas no es propiedad de un individuo, sino herencia colectiva del pueblo para curar el cuerpo y defender la vida en el territorio."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DE DETALLE DE PLANTA -->
+  <div class="modal-overlay" id="plantModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ficha">✕</button>
+      
+      <div class="modal-grid">
+        <!-- Columna de Imagen -->
+        <div class="modal-image-col">
+          <img id="modalPlantImage" src="" alt="Fotografía botánica">
+        </div>
+
+        <!-- Columna de Información Detallada -->
+        <div class="modal-info-col">
+          <div class="modal-badges">
+            <span class="badge-calidad" id="modalCalidadBadge">Cálida</span>
+            <span class="badge-categoria" id="modalCategoriaBadge">Uso</span>
+          </div>
+
+          <h2 class="modal-title" id="modalNombreComun">Nombre Planta</h2>
+          <span class="modal-scientific botanical-name" id="modalNombreCientifico">Nombre científico</span>
+          <p style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 600; margin-top: -0.75rem; margin-bottom: 1.25rem;" id="modalNombreAncestral"></p>
+
+          <div class="modal-section">
+            <h4 class="modal-section-title">
+              <svg style="width: 15px; height: 15px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Hábitat en Muellamués &amp; Partes Usadas
+            </h4>
+            <p class="modal-text"><strong>Lugar:</strong> <span id="modalEcosistema"></span></p>
+            <p class="modal-text"><strong>Partes utilizadas:</strong> <span id="modalPartes"></span></p>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-title">
+              <svg style="width: 15px; height: 15px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Usos Medicinales y Terapéuticos
+            </h4>
+            <ul id="modalUsosList" style="list-style: none; padding-left: 0; font-size: 0.9rem;"></ul>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-title">
+              <svg style="width: 15px; height: 15px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+              Método de Preparación y Posología
+            </h4>
+            <p class="modal-text" id="modalPreparacion" style="margin-bottom: 0.4rem;"></p>
+            <p class="modal-text" style="font-size: 0.85rem; color: var(--text-muted);"><strong>Posología:</strong> <span id="modalPosologia"></span></p>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-title" style="color: var(--accent-warm);">
+              <svg style="width: 15px; height: 15px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              Precauciones &amp; Advertencias
+            </h4>
+            <p class="modal-text" id="modalPrecauciones" style="color: #8c2a12; font-size: 0.88rem;"></p>
+          </div>
+
+          <!-- Cita de Saber Ancestral -->
+          <div class="modal-ancestral-quote" id="modalSaberAncestral"></div>
+
+          <!-- Botones de Acción dentro del Modal -->
+          <div class="modal-actions">
+            <button class="btn btn-secondary" id="modalAudioBtn">
+              <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+              </svg>
+              Escuchar Saber Oral
+            </button>
+
+            <button class="btn btn-secondary" id="modalPrintBtn">
+              <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+              </svg>
+              Imprimir Ficha de Campo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL INFORMATIVO DE COSMOVISIÓN COMPLETA -->
+  <div class="modal-overlay" id="cosmovisionModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" style="max-width: 720px; padding: 2.25rem;">
+      <button class="modal-close-btn" id="closeCosmovisionBtn">✕</button>
+      
+      <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.5rem;">
+        <div class="brand-icon" style="background: var(--accent-gold);">
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+            <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <h2 style="font-size: 1.6rem; color: var(--primary-deep);">Cosmovisión Etnobotánica de los Pastos</h2>
+          <p style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 600;">Fundamentos de la Medicina Ancestral de Muellamués</p>
+        </div>
+      </div>
+
+      <div style="font-size: 0.95rem; color: var(--text-main); line-height: 1.7; display: flex; flex-direction: column; gap: 1rem;">
+        <p>
+          Para el pueblo indígena de <strong>Los Pastos</strong> en el departamento de Nariño, el territorio es un ser vivo dotado de espíritu, fuerza (<em>fuerza del páramo</em>) y memoria. Las plantas son consideradas hermanas mayores y guardianas de la salud.
+        </p>
+
+        <div style="background: var(--bg-subtle); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
+          <h4 style="color: var(--primary-deep); font-size: 1.05rem; margin-bottom: 0.4rem;">La Clasificación Dual: Frío vs. Calor</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <strong>Plantas Cálidas (Calientes):</strong> Son plantas con alto contenido de resinas, aceites esenciales penetrantes y aromas vivos (Chilca, Ruda, Romero, Altamisa, Eucalipto, Sauco). Se emplean para sacar el frío enquistado en las articulaciones, sanar el "mal aire" o "malviento" recogido en quebradas y calentar el vientre de las mujeres en el posparto mediante baños de asiento y frotaciones.
+          </p>
+          <p style="font-size: 0.9rem;">
+            <strong>Plantas Frescas (Frías):</strong> Especies ricas en mucílagos y propiedades calmantes (Llantén, Sábila, Malva, Caléndula). Se usan para templar las calenturas, apagar las úlceras y quemaduras, calmar la irritación de la piel y refrescar el hígado o el estómago afiebrado.
+          </p>
+        </div>
+
+        <p>
+          <strong>Enfermedades Culturales del Territorio:</strong> En Muellamués se reconocen dolencias que la medicina alopática no clasifica pero que forman parte del sentir comunitario, tales como el <em>Mal de Viento</em> (enfriamiento repentino con decaimiento y náusea), el <em>Espanto</em> o <em>Susto</em> (pérdida del ánimo por una impresión fuerte), y el <em>Ojo</em> en los recién nacidos, los cuales se curan mediante limpias rituales combinando ruda, chilca y sahumerios.
+        </p>
+
+        <p style="font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 1rem;">
+          <em>Este registro digital fue consolidado como aporte de devolución comunitaria en cumplimiento del proyecto de condonación ante ICETEX y la asamblea del Resguardo Indígena de Muellamués.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de Página Institucional y Cultural -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Base de Datos Etnobotánica de Muellamués</h3>
+        <p>
+          Software interactivo y catálogo digital para la preservación, consulta pedagógica y salvaguarda de la medicina tradicional del Resguardo Indígena de Muellamués (Municipio de Guachucal, Nariño).
+        </p>
+        <p style="margin-top: 0.85rem; font-size: 0.82rem; color: #ffd885;">
+          Proyecto de Grado y Retribución Comunitaria • Fondo Álvaro Ulcué Chocué
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Autor &amp; Vinculación</h4>
+        <ul class="footer-links">
+          <li><strong>David Julián Taimal Poso</strong></li>
+          <li>C.C. 1144091406</li>
+          <li>Ingeniería de Sistemas e Informática</li>
+          <li>Universidad Nacional de Colombia - Medellín</li>
+          <li>Periodo Académico Final: 2026-2</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Comunidad &amp; Entidades</h4>
+        <ul class="footer-links">
+          <li>Cabildo Indígena de Muellamués</li>
+          <li>Gran Territorio de los Pastos</li>
+          <li>IPS Indígena de Muellamués</li>
+          <li>Jardín Botánico de Simancas</li>
+          <li>ICETEX • MinInterior Asuntos Indígenas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © 2026 Resguardo Indígena de Muellamués. Desarrollado con tecnologías abiertas (HTML5, CSS3, JS ES6, PWA Ready).
+      </div>
+      <div>
+        Gran Territorio de los Pastos • Nariño, Colombia
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contenedor flotante para Toast Notificaciones -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/plantsData.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

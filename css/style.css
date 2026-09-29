@@ -1,0 +1,989 @@
+/* 
+ * ESTILO ETNOBOTÁNICO ANCESTRAL & MODERNO
+ * Resguardo Indígena de Muellamués - Gran Territorio de los Pastos
+ * Diseño creado con altas pautas de accesibilidad, fluidez visual y respeto cultural.
+ */
+
+:root {
+  --primary-deep: #133a27;
+  --primary: #195e38;
+  --primary-light: #2e8b57;
+  --accent-gold: #c2881b;
+  --accent-gold-light: #e5a93c;
+  --accent-warm: #8b3a1a;
+  --calida-bg: #fff1eb;
+  --calida-border: #f5bba3;
+  --calida-text: #9c2a07;
+  --fresca-bg: #eaf6ee;
+  --fresca-border: #a8dfbc;
+  --fresca-text: #116834;
+  --templada-bg: #f4f0ff;
+  --templada-border: #d0c2f2;
+  --templada-text: #59359a;
+  
+  --bg-page: #fbf9f4;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f4eee2;
+  --text-main: #18221b;
+  --text-muted: #536257;
+  --text-light: #7e8d82;
+  --border-color: #e2dbce;
+  --border-light: #ede8df;
+  
+  --shadow-sm: 0 2px 6px rgba(19, 58, 39, 0.05);
+  --shadow-md: 0 6px 18px rgba(19, 58, 39, 0.08);
+  --shadow-lg: 0 14px 34px rgba(19, 58, 39, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+  color: var(--primary-deep);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.botanical-name {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: #c7bea9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Encabezado / Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 249, 244, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 1.5rem;
+}
+
+.navbar-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(25, 94, 56, 0.25);
+}
+
+.brand-text h1 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-text p {
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(25, 94, 56, 0.2);
+}
+.btn-primary:hover {
+  background: var(--primary-deep);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--primary-deep);
+  border-color: var(--border-color);
+}
+.btn-secondary:hover {
+  background: var(--bg-subtle);
+  border-color: var(--accent-gold);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--accent-gold), #9a650d);
+  color: #fff;
+}
+.btn-gold:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  cursor: pointer;
+}
+.btn-icon:hover {
+  background: var(--bg-subtle);
+  color: var(--primary);
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  background: linear-gradient(to bottom, #0f271a 0%, #163e2a 100%);
+  color: #fff;
+  padding: 3.5rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/hero_muellamues.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  opacity: 0.32;
+  mix-blend-mode: luminosity;
+  transform: scale(1.02);
+  transition: transform 8s ease;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffd885;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(8px);
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero h2 span {
+  background: linear-gradient(120deg, #ffdc8b, #e5a93c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  color: #e2ede5;
+  max-width: 780px;
+  margin: 0 auto 2.25rem;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stat-item {
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffd885;
+}
+.stat-label {
+  font-size: 0.78rem;
+  color: #c7ded0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* BUSCADOR Y FILTROS */
+.search-filter-section {
+  max-width: 1320px;
+  margin: -1.75rem auto 2.5rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 20;
+}
+
+.search-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.search-input-wrapper {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.search-input-wrapper svg {
+  position: absolute;
+  left: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  width: 22px;
+  height: 22px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.85rem 3rem 0.85rem 3.1rem;
+  font-size: 1.02rem;
+  font-family: inherit;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(25, 94, 56, 0.12);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 4px;
+  display: none;
+}
+.search-clear-btn:hover {
+  color: var(--text-main);
+}
+
+/* Fila de Filtros */
+.filter-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  min-width: 80px;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip {
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--bg-page);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+.chip:hover {
+  border-color: var(--primary-light);
+  color: var(--primary-deep);
+  background: #fff;
+}
+.chip.active {
+  background: var(--primary-deep);
+  color: #fff;
+  border-color: var(--primary-deep);
+  box-shadow: 0 2px 8px rgba(19, 58, 39, 0.2);
+}
+
+.chip-calida.active {
+  background: var(--accent-warm);
+  border-color: var(--accent-warm);
+}
+.chip-fresca.active {
+  background: #116834;
+  border-color: #116834;
+}
+.chip-templada.active {
+  background: #59359a;
+  border-color: #59359a;
+}
+
+/* Contador de resultados */
+.results-header {
+  max-width: 1320px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.results-count {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+.results-count strong {
+  color: var(--primary-deep);
+}
+
+/* GRILLA DE PLANTAS */
+.plants-container {
+  max-width: 1320px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.6rem;
+}
+
+/* Tarjeta de Planta */
+.plant-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: #c9bea9;
+}
+
+.card-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #e5ded2;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.plant-card:hover .card-img {
+  transform: scale(1.06);
+}
+
+/* Badges sobre la imagen */
+.card-badges {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.badge-calidad {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.28rem 0.7rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  backdrop-filter: blur(4px);
+}
+
+.badge-calida {
+  background: rgba(255, 237, 224, 0.95);
+  color: #9c2a07;
+  border: 1px solid #f5bba3;
+}
+.badge-fresca {
+  background: rgba(230, 248, 236, 0.95);
+  color: #0d6e35;
+  border: 1px solid #a8dfbc;
+}
+.badge-templada {
+  background: rgba(244, 239, 255, 0.95);
+  color: #59359a;
+  border: 1px solid #d0c2f2;
+}
+
+.badge-categoria {
+  background: rgba(19, 58, 39, 0.85);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+/* Contenido de la tarjeta */
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title-group {
+  margin-bottom: 0.6rem;
+}
+
+.card-title {
+  font-size: 1.28rem;
+  color: var(--primary-deep);
+  margin-bottom: 0.2rem;
+}
+
+.card-scientific {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.card-family {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.15rem;
+}
+
+.card-uses {
+  margin: 0.75rem 0 1.1rem;
+  flex-grow: 1;
+}
+
+.use-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.use-item svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--primary-light);
+  margin-top: 2px;
+}
+
+.card-footer {
+  border-top: 1px solid var(--border-light);
+  padding-top: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-ecosystem {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 65%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-card-details {
+  background: var(--bg-subtle);
+  color: var(--primary-deep);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-card-details:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* MODAL DE DETALLE DE PLANTA */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 28, 20, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 1px solid var(--border-color);
+  animation: modalEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+.modal-close-btn:hover {
+  background: #f0ebe1;
+  transform: rotate(90deg);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+@media (max-width: 768px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-image-col {
+  position: relative;
+  background: #e8e2d5;
+  min-height: 280px;
+}
+.modal-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info-col {
+  padding: 2rem 2.25rem;
+}
+
+.modal-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.modal-title {
+  font-size: 1.9rem;
+  color: var(--primary-deep);
+  margin-bottom: 0.2rem;
+}
+
+.modal-scientific {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.modal-section {
+  margin-bottom: 1.25rem;
+}
+
+.modal-section-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-light);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.modal-text {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.modal-ancestral-quote {
+  background: var(--bg-subtle);
+  border-left: 4px solid var(--accent-gold);
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #4a3818;
+  margin: 1.25rem 0;
+  line-height: 1.55;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+/* SECCIÓN COSMOVISIÓN & TERRITORIO */
+.territorio-section {
+  background: linear-gradient(135deg, #133a27, #1e5237);
+  color: #fff;
+  padding: 4.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.territorio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.territorio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.territorio-text h2 {
+  color: #fff;
+  font-size: 2.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.territorio-text h2 span {
+  color: #ffd885;
+}
+
+.territorio-text p {
+  color: #d6e8dd;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.territorio-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.feature-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  backdrop-filter: blur(6px);
+}
+
+.feature-box h4 {
+  color: #ffd885;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.feature-box p {
+  font-size: 0.85rem;
+  color: #e5f1ea;
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #0d1e15;
+  color: #9ab4a3;
+  padding: 3.5rem 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.88rem;
+}
+
+.footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.footer-brand h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer-brand p {
+  color: #8da495;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.footer-col h4 {
+  color: #ffd885;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: #9ab4a3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #728c7c;
+}
+
+/* TOAST NOTIFICACIONES */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.toast {
+  background: var(--primary-deep);
+  color: #fff;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-left: 4px solid var(--accent-gold);
+  animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MODO DE IMPRESIÓN (Ficha Etnobotánica de Campo) */
+@media print {
+  .navbar, .hero, .search-filter-section, .results-header, .site-footer, .modal-actions, .modal-close-btn, .toast-container {
+    display: none !important;
+  }
+  
+  body, .modal-overlay, .modal-content {
+    background: #fff !important;
+    color: #000 !important;
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .modal-grid {
+    grid-template-columns: 1fr 1.5fr !important;
+  }
+}

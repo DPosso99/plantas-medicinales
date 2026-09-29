@@ -1,0 +1,20 @@
+{
+  "name": "plantas-medicinales-muellamues",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Software Interactivo de Plantas Medicinales del Resguardo Indígena de Muellamués - Guachucal, Nariño (Pueblo Pastos)",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "etnobotanica",
+    "plantas-medicinales",
+    "muellamues",
+    "pastos",
+    "icetex",
+    "unal"
+  ],
+  "author": "David Julián Taimal Poso <djtaimalp@unal.edu.co>",
+  "license": "MIT"
+}
