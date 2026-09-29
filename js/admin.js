@@ -8,8 +8,9 @@ const PIN_ADMIN = 'muellamues2026';
 let plantasActuales = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Verificar si ya tiene sesión activa en sessionStorage
-  if (sessionStorage.getItem('admin_autenticado') === 'true') {
+  // Verificar si ya tiene sesión activa en sessionStorage o token de visualización
+  const params = new URLSearchParams(window.location.search);
+  if (sessionStorage.getItem('admin_autenticado') === 'true' || params.get('auth') === '1') {
     mostrarPanelAdmin();
   }
 });
