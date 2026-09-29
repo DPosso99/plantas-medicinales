@@ -98,7 +98,7 @@ const PLANTAS_INICIALES = [
     posologia: "Friegas suaves 1 vez cada 8 días. Infusión: 1 cucharada de hoja seca por litro de agua, tomar 2 vasos diarios.",
     precauciones: "Manipular con cuidado. No aplicar sobre heridas abiertas ni en pieles atópicas sensibles.",
     saber_ancestral: "«El ardor de la ortiga no es castigo sino despertar. Despierta la sangre que se ha enfriado por el viento y quita la pesadez del cuerpo que no quiere levantarse.» — Mayor del Resguardo",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Grosse_Brennnessel_%28Urtica_dioica%29_-_Fruchtstand.jpg/640px-Grosse_Brennnessel_%28Urtica_dioica%29_-_Fruchtstand.jpg",
+    imagen_url: "assets/images/ortiga.jpg",
     abundancia: "Muy común en zanjones y linderos"
   },
   {
@@ -121,7 +121,7 @@ const PLANTAS_INICIALES = [
     posologia: "Tomar 1 vaso de cocimiento en ayunas para el estómago durante 9 días; cambiar emplasto cada 12 horas.",
     precauciones: "Lavar minuciosamente las hojas antes de procesarlas. Moderar tomas en personas con estreñimiento crónico.",
     saber_ancestral: "«El llantén es el parche de la tierra: refresca las llagas vivas, asienta el fuego quemante del estómago y cierra las heridas que ningún ungüento puede cerrar.» — Médica Tradicional",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Plantago_major_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-108.jpg/640px-Plantago_major_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-108.jpg",
+    imagen_url: "assets/images/llanten.jpg",
     abundancia: "Abundante en todo el territorio"
   },
   {
@@ -144,7 +144,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza caliente después de comidas pesadas o antes de dormir.",
     precauciones: "Filtrar muy bien con tela de lienzo si se utiliza para gotas o lavado de ojos.",
     saber_ancestral: "«Una tacita de flor de manzanilla con panela tibia apacigua el susto del estómago y devuelve la tranquilidad al corazón desasosegado.» — Abuela de Muellamués",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Matricaria_chamomilla_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-098.jpg/640px-Matricaria_chamomilla_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-098.jpg",
+    imagen_url: "assets/images/manzanilla.jpg",
     abundancia: "Frecuente en huertos familiares"
   },
   {
@@ -167,7 +167,7 @@ const PLANTAS_INICIALES = [
     posologia: "Friegas nocturnas en articulaciones o sienes; infusión de 1 ramita pequeña 1 vez al día.",
     precauciones: "Personas con hipertensión arterial alta no deben consumirlo en tomas orales continuas.",
     saber_ancestral: "«El romero aviva el pensamiento y ahuyenta los malos sueños; quien lleva una ramita en el sombrero o el bolsillo camina despierto y protegido del viento frío.» — Sabedor Pastos",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Salvia_rosmarinus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-123.jpg/640px-Salvia_rosmarinus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-123.jpg",
+    imagen_url: "assets/images/romero.jpg",
     abundancia: "Cultivado ampliamente"
   },
   {
@@ -190,7 +190,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza tibia a media tarde y otra al momento de acostarse.",
     precauciones: "No sobrepasar las dosis indicadas si se están tomando medicamentos sedantes recetados.",
     saber_ancestral: "«Cuando el ánimo decae o el susto aprieta el pecho, el toronjil reconforta el espíritu y ayuda a soltar la congoja de los mayores.» — Mayora de la IPS Indígena",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Melissa_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-095.jpg/640px-Melissa_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-095.jpg",
+    imagen_url: "assets/images/toronjil.jpg",
     abundancia: "Común en huertos"
   },
   {
@@ -213,7 +213,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza tibia después de las comidas; en ayunas para parásitos durante 3 mañanas.",
     precauciones: "Evitar en casos de reflujo gastroesofágico severo o hernia hiatal.",
     saber_ancestral: "«La yerbabuena no falta en la cocina de los Pastos; quita el empacho de la comida pesada y sosiega las náuseas de los guaguas.» — Tradición oral de Muellamués",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Mentha_spicata_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-096.jpg/640px-Mentha_spicata_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-096.jpg",
+    imagen_url: "assets/images/yerbabuena.jpg",
     abundancia: "Muy común en todas las veredas"
   },
   {
@@ -236,7 +236,7 @@ const PLANTAS_INICIALES = [
     posologia: "Aplicar la pomada dos veces al día en la piel limpia; infusión: 2 tazas al día entre comidas.",
     precauciones: "No ingerir durante los primeros meses de gestación. Probar primero en el antebrazo para descartar alergia.",
     saber_ancestral: "«La flor dorada que cura la carne; donde hay piel rota o quemada por el sol o la helada del páramo, la caléndula la restaura limpia.» — Médicos Tradicionales",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Calendula_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-024.jpg/640px-Calendula_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-024.jpg",
+    imagen_url: "assets/images/calendula.jpg",
     abundancia: "Común cultivada"
   },
   {
@@ -259,7 +259,7 @@ const PLANTAS_INICIALES = [
     posologia: "Tomar 1 taza bien caliente bien arropado en la cama para sudar la fiebre.",
     precauciones: "Las hojas verdes y bayas crudas no deben consumirse crudas por contener principios amargos tóxicos.",
     saber_ancestral: "«El sauco es el árbol que cobija la casa. Cuando la helada cae y el pecho se tranca de flema, su flor es el remedio bendito para sudar la peste sin recaer.» — Sabedor Mayor",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Sambucus_nigra_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-124.jpg/640px-Sambucus_nigra_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-124.jpg",
+    imagen_url: "assets/images/sauco.jpg",
     abundancia: "Muy abundante en el paisaje del resguardo"
   },
   {
@@ -282,7 +282,7 @@ const PLANTAS_INICIALES = [
     posologia: "Vaporizaciones de 10 minutos por la noche. No salir al frío inmediatamente después del vaho.",
     precauciones: "No acercar demasiado el rostro al vapor hirviente para evitar quemaduras. Evitar en niños menores de 3 años.",
     saber_ancestral: "«El vapor de eucalipto abre las puertas de la respiración trancada. En tiempos de peste o frío recio, purifica la casa entera de las malas miasmas.» — Comunidad de Muellamués",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Eucalyptus_globulus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-060.jpg/640px-Eucalyptus_globulus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-060.jpg",
+    imagen_url: "assets/images/eucalipto.jpg",
     abundancia: "Muy abundante en plantaciones y cercas"
   },
   {
@@ -305,7 +305,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza después de las comidas principales.",
     precauciones: "Planta muy segura. Evitar dosis excesivas durante meses prolongados sin descanso.",
     saber_ancestral: "«El cedrón aromatiza el hogar y suaviza las digestiones difíciles. Es la infusión de la cordialidad que se brinda a quien llega de visita al resguardo.» — Partera de Muellamués",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Aloysia_citrodora_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-154.jpg/640px-Aloysia_citrodora_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-154.jpg",
+    imagen_url: "assets/images/cedron.jpg",
     abundancia: "Cultivado en solares familiares"
   },
   {
@@ -328,7 +328,7 @@ const PLANTAS_INICIALES = [
     posologia: "Baños de asiento durante 7 días continuos en la noche. Friegas musculares según necesidad.",
     precauciones: "Contraindicada durante el embarazo y lactancia. Uso predominantemente externo.",
     saber_ancestral: "«Planta brava de fuerza para arrancar el frío enquistado en las coyunturas y alejar las malas influencias que traen decaimiento y pesadez.» — Curandero de Muellamués",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Ambrosia_artemisiifolia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-010.jpg/640px-Ambrosia_artemisiifolia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-010.jpg",
+    imagen_url: "assets/images/altamisa.jpg",
     abundancia: "Frecuente en rastrojos"
   },
   {
@@ -351,7 +351,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 pocillo tibio en la mañana antes de subir a labores de páramo o faenas agrícolas.",
     precauciones: "Por ser espinosa, colar con cuidado. No usar en personas con úlceras sangrantes activas.",
     saber_ancestral: "«La flor que no se dobla ante el hielo. Los antiguos caminantes de los Pastos masticaban sus flores para no sucumbir a la fatiga ni al congelamiento de las cumbres.» — Relato de pastoreo",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Chuquiraga_jussieui_01.jpg/640px-Chuquiraga_jussieui_01.jpg",
+    imagen_url: "assets/images/chuquiragua.jpg",
     abundancia: "Exclusiva de páramo alto"
   },
   {
@@ -374,7 +374,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza después de las comidas o durante viajes por la cordillera.",
     precauciones: "No administrar en cantidades concentradas a mujeres gestantes.",
     saber_ancestral: "«El poleo calienta la barriga cuando el viento la infla y la destiempla. Es el mejor compañero para subir a la cordillera y espantar el mareo.» — Sabedor del Territorio",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Minthostachys_mollis_-_Flickr_-_Alex_Popovkin%2C_Bahia_%281%29.jpg/640px-Minthostachys_mollis_-_Flickr_-_Alex_Popovkin%2C_Bahia_%281%29.jpg",
+    imagen_url: "assets/images/poleo.jpg",
     abundancia: "Común en zonas pedregosas"
   },
   {
@@ -397,7 +397,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza 3 veces al día mientras persista el cuadro febril o eruptivo.",
     precauciones: "Utilizar preferentemente las flores; evitar tomas de hojas viejas por periodos largos.",
     saber_ancestral: "«Las flores celestes de la borraja brotan la enfermedad hacia afuera; limpian el calor de la sangre en los niños que arden en calentura.» — Partera tradicional",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Borago_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-022.jpg/640px-Borago_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-022.jpg",
+    imagen_url: "assets/images/borraja.jpg",
     abundancia: "Frecuente en huertos familiares"
   },
   {
@@ -420,7 +420,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 pocillo de miel de penco cocida en ayunas durante 15 días.",
     precauciones: "La savia fresca sin hervir puede ocasionar dermatitis intensa por oxalatos de calcio.",
     saber_ancestral: "«El penco es columna del territorio. Su fibra teje el costal y su savia nutre los huesos desgastados de nuestros abuelos que trabajaron la tierra.» — Mayor comunero",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Agave_americana_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-005.jpg/640px-Agave_americana_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-005.jpg",
+    imagen_url: "assets/images/penco.jpg",
     abundancia: "Abundante en linderos de Muellamués"
   },
   {
@@ -443,7 +443,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 trozo de cristal en ayunas con jugo de naranja durante 7 días; aplicación tópica 3 veces al día en la piel.",
     precauciones: "Lavar minuciosamente para remover el acíbar amarillo laxante. Contraindicada en el embarazo y en diarreas.",
     saber_ancestral: "«El cristal de la sábila apaga cualquier fuego interior. Se cuelga con cinta roja tras la puerta para llamar la paz y proteger el hogar de miradas pesadas.» — Costumbre ancestral",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Aloe_vera_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-008.jpg/640px-Aloe_vera_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-008.jpg",
+    imagen_url: "assets/images/sabila.jpg",
     abundancia: "Cultivada en patios protegidos"
   },
   {
@@ -466,7 +466,7 @@ const PLANTAS_INICIALES = [
     posologia: "Aplicación inmediata como hemostático; lavados antisépticos 2 veces al día.",
     precauciones: "De uso principalmente tópico. No consumir dosis orales excesivas.",
     saber_ancestral: "«El gran cicatrizante de la montaña. Detiene la sangre al instante y limpia las heridas profundas de machete o espina sin dejar que se pudra la carne.» — Mayor campesino",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Piper_aduncum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-112.jpg/640px-Piper_aduncum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-112.jpg",
+    imagen_url: "assets/images/matico.jpg",
     abundancia: "Frecuente en quebradas abrigadas"
   },
   {
@@ -489,7 +489,7 @@ const PLANTAS_INICIALES = [
     posologia: "Media taza antes de ir a dormir. Tomar por periodos cortos de máximo 10 días seguidos.",
     precauciones: "No combinar con bebidas alcohólicas ni con sedantes químicos. No operar herramientas pesadas tras su toma.",
     saber_ancestral: "«La raíz de la valeriana aquieta la mente cuando los pensamientos no dejan reposar al cuerpo. Olor fuerte que duerme el desespero y devuelve la paz.» — Sabedor del Páramo",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Valeriana_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-143.jpg/640px-Valeriana_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-143.jpg",
+    imagen_url: "assets/images/valeriana.jpg",
     abundancia: "Silvestre en pajonales húmedos"
   },
   {
@@ -512,7 +512,7 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza tibia 2 a 3 veces al día; lavados tópicos tantas veces como se requiera.",
     precauciones: "Planta sumamente noble y segura para todas las edades.",
     saber_ancestral: "«La malva suaviza y desinflama todo lo que esté caliente y enrojecido; es el remedio de las madres para bañar la piel tierna de los recién nacidos.» — Partera de Muellamués",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Malva_sylvestris_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-092.jpg/640px-Malva_sylvestris_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-092.jpg",
+    imagen_url: "assets/images/malva.jpg",
     abundancia: "Muy común en todo el resguardo"
   },
   {
@@ -535,7 +535,7 @@ const PLANTAS_INICIALES = [
     posologia: "Cambiar el emplasto 2 veces al día, cubriendo con tela de algodón limpia.",
     precauciones: "USO ESTRICTAMENTE EXTERNO. Sus frutos verdes y tomas orales concentradas son tóxicos por solanina.",
     saber_ancestral: "«El emplasto de hierba mora corta la culebrilla y el ardor rabioso de la erisipela cuando la piel arde en fuego vivo.» — Yerbatero tradicional",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Solanum_nigrum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-132.jpg/640px-Solanum_nigrum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-132.jpg",
+    imagen_url: "assets/images/hierbamora.jpg",
     abundancia: "Común en rastrojos húmedos"
   },
   {
@@ -558,13 +558,13 @@ const PLANTAS_INICIALES = [
     posologia: "1 taza de cocimiento en ayunas durante 14 días consecutivos.",
     precauciones: "No consumir en caso de cálculos biliares de gran tamaño u obstrucción de vías biliares sin supervisión.",
     saber_ancestral: "«La flor amarilla que amarga en la boca pero endulza la sangre; limpia el hígado entorpecido por los pesares, las cóleras y los excesos.» — Mayor de Muellamués",
-    imagen_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Taraxacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-135.jpg/640px-Taraxacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-135.jpg",
+    imagen_url: "assets/images/diente_leon.jpg",
     abundancia: "Muy abundante en praderas y pastizales"
   }
 ];
 
 // Clave en localStorage para persistencia comunitaria
-const STORAGE_KEY = 'plantas_muellamues_v1';
+const STORAGE_KEY = 'plantas_muellamues_v2';
 
 // Función para obtener las plantas actuales (localStorage o iniciales)
 function obtenerPlantas() {
